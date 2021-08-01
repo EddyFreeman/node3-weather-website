@@ -65,7 +65,7 @@ app.get('/weather', (req, res) => {
                 })
             }
             res.send({
-                temperature: forecaseData.temperature,
+                temperature: forecaseData.temperature + " (Degree celcius)",
                 weather_descriptions: forecaseData.weather_descriptions[0],
                 location: location,
                 address: address
