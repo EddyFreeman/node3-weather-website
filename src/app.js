@@ -3,7 +3,11 @@ const express = require('express')
 const hbs = require('hbs') // THis is necessary for partials
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+
 const app = express()
+
+// Heroku will pass the port number via environment variable
+const port = process.env.PORT || 3000;
 
 
 // Paths for express
@@ -86,8 +90,9 @@ app.get('*', (rq, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+// app.listen(3000, () => {
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
 
 
